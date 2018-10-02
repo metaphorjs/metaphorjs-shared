@@ -6,8 +6,11 @@ var extend = require("../func/extend.js"),
     isString = require("../func/isString.js"),
     undf = require("../var/undf.js"),
     isBool = require("../func/isBool.js"),
-    instantiate = require("../func/instantiate.js");
+    instantiate = require("../func/instantiate.js"),
+    MetaphorJs = require("../MetaphorJs.js"),
+    lib_Promise = require("metaphorjs-promise/src/lib/Promise.js");
 
+module.exports = MetaphorJs.lib.Provider = (function(){
 
 var VALUE       = 1,
     CONSTANT    = 2,
@@ -68,7 +71,7 @@ extend(Provider.prototype, {
         for (i = -1, l = injectable.length; ++i < l;
                 values.push(self.resolve(injectable[i], currentValues))) {}
 
-        return Promise.all(values).then(function(values){
+        return lib_Promise.all(values).then(function(values){
             return self.instantiate(fn, context, values, isClass);
         });
     },
@@ -155,7 +158,7 @@ extend(Provider.prototype, {
 
                 if (!item.instance) {
 
-                    item.instance = Promise.resolve(
+                    item.instance = lib_Promise.resolve(
                             self.inject(item.fn, null, currentValues)
                         )
                         .done(function(instance){
@@ -212,4 +215,5 @@ Provider.global = function() {
 
 globalProvider = new Provider;
 
-module.exports = Provider;
+return Provider;
+}());

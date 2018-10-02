@@ -1,17 +1,16 @@
 
-var async = require("metaphorjs-shared/src/func/async.js"),
+var async = require("../func/async.js"),
     extend = require("../func/extend.js"),
     bind = require("../func/bind.js"),
     nextUid = require("../func/nextUid.js"),
     isThenable = require("../func/isThenable.js"),
     emptyFn = require("../func/emptyFn.js"),
     isNumber = require("../func/isNumber.js"),
-    error = require("../../../metaphorjs-shared/src/func/error.js"),
-    raf = require("metaphorjs-animate/src/func/raf.js");
+    error = require("../func/error.js"),
+    raf = require("metaphorjs-animate/src/func/raf.js"),
+    MetaphorJs = require("../MetaphorJs.js");
 
-
-
-module.exports = (function(){
+module.exports = MetaphorJs.lib.Queue = (function(){
 
 
 var Queue = function(cfg) {

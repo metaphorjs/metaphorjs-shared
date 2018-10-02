@@ -1,5 +1,5 @@
 
-var Provider = require("../lib/Provider.js"),
+var lib_Provider = require("../lib/Provider.js"),
     MetaphorJs = require("../MetaphorJs.js");
 
 module.exports = MetaphorJs.mixin.Provider = {
@@ -10,7 +10,7 @@ module.exports = MetaphorJs.mixin.Provider = {
     $$provider: null,
 
     $beforeInit: function() {
-        this.$$provider = new Provider;
+        this.$$provider = new lib_Provider;
     },
 
     value: function() {
