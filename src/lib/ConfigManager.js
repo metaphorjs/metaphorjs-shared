@@ -1,6 +1,6 @@
+require("metaphorjs-observable/src/lib/Observable.js");
 
 var extend = require("../func/extend.js"),
-    lib_Observable = require("metaphorjs-observable/src/lib/Observable.js"),
     nextUid = require("../func/nextUid.js"),
     toBool = require("../func/toBool.js"),
     isArray = require("../func/isArray.js"),
@@ -17,7 +17,7 @@ module.exports = (function(){
 
     var ConfigManager = function(values, cfg) {
         if (!$$observable) {
-            $$observable = new lib_Observable;
+            $$observable = new MetaphorJs.lib.Observable;
         }
 
         var self = this;

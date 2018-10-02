@@ -1,5 +1,5 @@
-
-var lib_Cache = require("../lib/Cache.js");
+var MetaphorJs = require("metaphorjs-shared/src/MetaphorJs.js");
+require("../lib/Cache.js");
 
 /**
  * Get cached regular expression
@@ -8,7 +8,7 @@ var lib_Cache = require("../lib/Cache.js");
  * @returns {RegExp}
  */
 module.exports = function getRegExp(expr) {
-    var g = lib_Cache.global(),
+    var g = MetaphorJs.lib.Cache.global(),
         k = "regex_"+expr;
     return g.get(k) || g.add(k, new RegExp(expr));
 };
