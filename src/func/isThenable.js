@@ -5,7 +5,7 @@ var isFunction = require("./isFunction.js");
  * Checks if given value is a thenable (a Promise)
  * @function isThenable
  * @param {*} any
- * @returns {boolean}
+ * @returns {boolean|function}
  */
 module.exports = function isThenable(any) {
 
@@ -23,5 +23,7 @@ module.exports = function isThenable(any) {
         return false;
     }
 
-    return isFunction(any.then);
+    var then = any.then;
+
+    return isFunction(then) ? then : false;
 };
