@@ -1,0 +1,22 @@
+{
+  "name": "metaphorjs-shared",
+  "version": "0.0.1",
+  "description": "Libraries shared among MetaphorJs packages",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metaphorjs/metaphorjs-shared.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/metaphorjs/metaphorjs-shared/issues"
+  },
+  "homepage": "https://github.com/metaphorjs/metaphorjs-shared#readme"
+}

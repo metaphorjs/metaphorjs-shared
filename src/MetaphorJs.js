@@ -3,5 +3,8 @@
 module.exports = {
     plugin: {},
     mixin: {},
-    lib: {}
+    lib: {},
+    dom: {},
+    regexp: {},
+    browser: {}
 };
