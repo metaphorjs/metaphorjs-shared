@@ -10,18 +10,9 @@ var isBool = require("./isBool.js"),
  * Filter array of various objects by object field
  * @function filterArray
  * @param {array} list Array to filter
- * @param {string|boolean|regexp} by {
- *  Let x = array[i]<br>
- *  If x is bool and by is bool, return x === by;<br>
- *  If by is regex, return by.test(x)<br>
- *  If opt is true or not set, return x.contains(by)<br>
- *  If opt is false, return !x.contains(by)<br>
- *  If opt == "strict", return str(x) === str(by)<br><br>
- * 
- *  If x is an object, comparison goes for every property.
- *  If at least one property matches, x matches.
- * }
+ * @param {string|boolean|regexp} by 
  * @param {string|boolean|null} opt true | false | "strict"
+ * @code src-docs/examples/filterArray.js
  */
 
 /**
@@ -39,12 +30,7 @@ var isBool = require("./isBool.js"),
  * Filter array of various objects by object field
  * @function filterArray
  * @param {array} list Array to filter
- * @param {object} by {
- *  Let x = array[i] and x is object.<br>
- *  Every key of "by" will be compared to the same key of "x". 
- *  Comparison goes as described in the first version of filterArray.<br>
- *  If key == "$", every key of x will be compared to by.$
- * }
+ * @param {object} by 
  * @param {object} opt true | false | "strict"
  */
 module.exports = function(){
