@@ -8,9 +8,9 @@ var isPlainObject = require("metaphorjs-shared/src/func/isPlainObject.js"),
 
 /**
  * A storage of plural definitions
- * @class MetaphorJs.lib.Plural
+ * @class MetaphorJs.lib.LocalText
  */
-module.exports = MetaphorJs.lib.Plural = function(){
+module.exports = MetaphorJs.lib.LocalText = function(){
 
     var pluralDef       = function($number, $locale) {
 
@@ -183,11 +183,11 @@ module.exports = MetaphorJs.lib.Plural = function(){
 
 
     /**
-     * @method Plural
+     * @method LocalText
      * @constructor
      * @param {string} locale 2char locale id
      */
-    var Plural = function(locale) {
+    var LocalText = function(locale) {
 
         var self    = this;
         self.store  = {};
@@ -196,7 +196,7 @@ module.exports = MetaphorJs.lib.Plural = function(){
         }
     };
 
-    extend(Plural.prototype, {
+    extend(LocalText.prototype, {
 
         store: null,
         locale: "en",
@@ -216,7 +216,7 @@ module.exports = MetaphorJs.lib.Plural = function(){
          * @param {array|object} value {
          *  Array:<br>
          *  0: Singular form<br>
-         *  1: Plural form<br>
+         *  1: LocalText form<br>
          *  2: Second plural form<br>
          *  3: Third plural form<br>
          *  Object:<br>
@@ -301,11 +301,11 @@ module.exports = MetaphorJs.lib.Plural = function(){
     }, true, false);
 
 
-    var globalText  = new Plural;
+    var globalText  = new LocalText;
 
-    Plural.global     = function() {
+    LocalText.global     = function() {
         return globalText;
     };
 
-    return Plural;
+    return LocalText;
 }();
