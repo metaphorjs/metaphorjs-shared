@@ -6,5 +6,6 @@ module.exports = {
     lib: {},
     dom: {},
     regexp: {},
-    browser: {}
+    browser: {},
+    app: {}
 };
