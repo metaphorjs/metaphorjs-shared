@@ -1,7 +1,20 @@
 
 var equals = require("./equals.js");
 
-module.exports = function levenshteinArray(from, to) {
+/**
+ * @function levenshteinDiff {
+ *  @param {array} from
+ *  @param {array} to
+ *  @returns {object} {
+ *      @type {number} changes
+ *      @type {int} distance
+ *      @type {array} prescription {
+ *          List of instructions D(delete),R(replace),I(insert)
+ *      }
+ *  }
+ * }
+ */
+module.exports = function levenshteinDiff(from, to) {
 
     var m = from.length,
         n = to.length,
@@ -13,7 +26,7 @@ module.exports = function levenshteinArray(from, to) {
         dist,
         ops = 0;
 
-    if (m == n && m == 0) {
+    if (m == n && m === 0) {
         return {
             changes: 0,
             distance: 0,
@@ -49,7 +62,7 @@ module.exports = function levenshteinArray(from, to) {
             else {
                 //Replace or noop
                 D[i][j] = D[i - 1][j - 1] + cost;
-                if (cost == 1) {
+                if (cost === 1) {
                     P[i][j] = 'R';
                 }
                 else {
@@ -67,20 +80,20 @@ module.exports = function levenshteinArray(from, to) {
     do {
         c = P[i][j];
         route.push(c);
-        if (c != '-') {
+        if (c !== '-') {
             ops++;
         }
-        if(c == 'R' || c == '-') {
+        if(c === 'R' || c === '-') {
             i --;
             j --;
         }
-        else if(c == 'D') {
+        else if(c === 'D') {
             i --;
         }
         else {
             j --;
         }
-    } while((i != 0) || (j != 0));
+    } while((i !== 0) || (j !== 0));
 
     dist = D[m][n];
 
