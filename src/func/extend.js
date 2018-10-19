@@ -1,7 +1,7 @@
 var toArray = require("./toArray.js"),
     isPlainObject = require("./isPlainObject.js"),
     isBool = require("./isBool.js"),
-    undf = require("..//var/undf.js");
+    undf = require("../var/undf.js");
 
 /**
  * Copy properties from one object to another
@@ -37,7 +37,15 @@ module.exports = function extend() {
         override    = args.pop();
     }
 
-    while (src = args.shift()) {
+    while (args.length) {
+        
+        // src can be empty
+        src = args.shift();
+        
+        if (!src) {
+            continue;
+        }
+
         for (k in src) {
 
             if (src.hasOwnProperty(k) && (value = src[k]) !== undf) {
