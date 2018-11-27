@@ -7,5 +7,6 @@ module.exports = {
     dom: {},
     regexp: {},
     browser: {},
-    app: {}
+    app: {},
+    prebuilt: typeof MetaphorJsPrebuilt !== "undefined" ? MetaphorJsPrebuilt : null
 };
