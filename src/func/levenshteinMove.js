@@ -24,7 +24,7 @@ module.exports = function levenshteinMove(a1, a2, prs, getKey) {
         index;
 
     for (i = 0, l = a1.length; i < l; i++) {
-        k = getKey(a1[i]);
+        k = getKey(a1[i], i);
         if (k) {
             map1[k] = i;
         }
@@ -41,7 +41,7 @@ module.exports = function levenshteinMove(a1, a2, prs, getKey) {
             continue;
         }
 
-        k = getKey(a2[a2i]);
+        k = getKey(a2[a2i], a2i);
 
         if (k !== undf && used[k] !== true && (index = map1[k]) !== undf) {
             newPrs.push(index);
