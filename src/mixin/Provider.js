@@ -37,6 +37,11 @@ module.exports = MetaphorJs.mixin.Provider = {
         return p.provider.apply(p, arguments);
     },
 
+    isResolved: function() {
+        var p = this.$$provider;
+        return p.isResolved.apply(p, arguments);
+    },
+
     resolve: function() {
         var p = this.$$provider;
         return p.resolve.apply(p, arguments);

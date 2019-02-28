@@ -127,6 +127,11 @@ extend(Provider.prototype, {
         };
     },
 
+    isResolved: function(name) {
+        var item = this.store[name];
+        return item && (item.type === VALUE || item.type === CONSTANT);
+    },
+
     resolve: function(name, currentValues, callArgs) {
 
         var self    = this,
