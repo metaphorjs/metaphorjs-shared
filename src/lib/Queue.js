@@ -43,6 +43,8 @@ extend(Queue.prototype, {
     _nextRequested: false,
     _running: false,
 
+    currentItemNo: null,
+
     length: 0,
     id: null,
     async: true,
@@ -50,6 +52,7 @@ extend(Queue.prototype, {
     thenable: false,
     stack: false,
     context: null,
+    counter: 0,
     mode: Queue.MULTIPLE,
 
     add: function(fn, context, args, mode, prepend, async) {
@@ -62,7 +65,8 @@ extend(Queue.prototype, {
                 fn: fn,
                 context: context,
                 args: args,
-                async: async
+                async: async,
+                itemno: ++self.counter
             };
 
         mode = mode || self.mode;
@@ -145,6 +149,7 @@ extend(Queue.prototype, {
         }
 
         self._running = true;
+        self.currentItemNo = item.itemno;
 
         delete self._map[item.id];
 
@@ -177,6 +182,7 @@ extend(Queue.prototype, {
         var self = this;
         if (self._running) {
             self._running = false;
+            self.currentItemNo = null;
             if (self.auto || self._nextRequested) {
                 self.next();
             }
