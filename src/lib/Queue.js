@@ -52,6 +52,8 @@ extend(Queue.prototype, {
     thenable: false,
     stack: false,
     context: null,
+    onResult: null,
+    onFinish: null,
     counter: 0,
     mode: Queue.MULTIPLE,
 
@@ -145,7 +147,7 @@ extend(Queue.prototype, {
         self.length = self._queue.length;
 
         if (!item) {
-            return;
+            return false;
         }
 
         self._running = true;
@@ -162,11 +164,10 @@ extend(Queue.prototype, {
             }
             finally {
                 if (isThenable(res)) {
-                    res.catch(error);
                     res.then(self._f, self._f);
                 }
                 else {
-                    self._finish();
+                    self._finish(res);
                 }
             }
         };
@@ -178,13 +179,19 @@ extend(Queue.prototype, {
         asnc && asnc !== "raf" && async(fn, null, null, isNumber(asnc) ? asnc : 0);
     },
 
-    _finish: function() {
+    _finish: function(result) {
         var self = this;
+        self.onResult && self.onResult.call(self.context, result);
         if (self._running) {
             self._running = false;
             self.currentItemNo = null;
             if (self.auto || self._nextRequested) {
-                self.next();
+                if (self.next() === false) {
+                    self.onFinish && self.onFinish.call(self.context);
+                }
+            }
+            else {
+                self.length === 0 && self.onFinish && self.onFinish.call(self.context);
             }
         }
     },
