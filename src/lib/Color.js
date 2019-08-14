@@ -34,7 +34,7 @@ module.exports = MetaphorJs.lib.Color = (function(){
         val[0] = parseFloat(val[0] || 0);
         val[1] = parseFloat(val[1] || 0);
         val[2] = parseFloat(val[2] || 0);
-        val[3] = parseFloat(val[3] || 1);
+        val[3] = val[3] === 0 ? 0 : parseFloat(val[3] || 1);
 
         return val;
     },
@@ -317,7 +317,7 @@ module.exports = MetaphorJs.lib.Color = (function(){
     },
 
     parseString = function(str) {
-        var match = str.match(/[\d, ]+/);
+        var match = str.match(/[\d, \.]+/);
         if (match) {
             var parts = match[0].split(",");
             parts[0] && (parts[0] = parseInt(parts[0]));
