@@ -1,6 +1,6 @@
 
 
-module.exports = {
+const MetaphorJs = {
     plugin: {},
     mixin: {},
     lib: {},
@@ -8,5 +8,8 @@ module.exports = {
     regexp: {},
     browser: {},
     app: {},
-    prebuilt: typeof MetaphorJsPrebuilt !== "undefined" ? MetaphorJsPrebuilt : null
+    prebuilt: null
 };
+
+
+module.exports = MetaphorJs;

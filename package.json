@@ -2,10 +2,10 @@
   "name": "metaphorjs-shared",
   "version": "0.0.1",
   "description": "Libraries shared among MetaphorJs packages",
-  "main": "index.js",
   "directories": {
     "test": "test"
   },
+  "main": "src/MetaphorJs.js",
   "scripts": {
     "test": "mocha"
   },
@@ -18,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/metaphorjs/metaphorjs-shared/issues"
   },
-  "homepage": "https://github.com/metaphorjs/metaphorjs-shared#readme"
+  "homepage": "https://github.com/metaphorjs/metaphorjs-shared#readme",
+  "dependencies": {}
 }

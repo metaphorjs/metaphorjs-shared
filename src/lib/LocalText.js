@@ -1,10 +1,9 @@
 
 
-var isPlainObject = require("metaphorjs-shared/src/func/isPlainObject.js"),
-    isArray = require("metaphorjs-shared/src/func/isArray.js"),
-    extend = require("metaphorjs-shared/src/func/extend.js"),
-    undf = require("metaphorjs-shared/src/var/undf.js"),
-    MetaphorJs = require("metaphorjs-shared/src/MetaphorJs.js");
+const isPlainObject = require("../func/isPlainObject.js"),
+    isArray = require("../func/isArray.js"),
+    extend = require("../func/extend.js"),
+    MetaphorJs = require("../MetaphorJs.js");
 
 /**
  * A storage of plural definitions
@@ -228,7 +227,7 @@ module.exports = MetaphorJs.lib.LocalText = function(){
          */
         set: function(key, value) {
             var store = this.store;
-            if (store[key] === undf) {
+            if (store[key] === undefined) {
                 store[key] = value;
             }
         },
@@ -273,10 +272,10 @@ module.exports = MetaphorJs.lib.LocalText = function(){
                     if (strings[number]) {
                         return strings[number];
                     }
-                    if (number === 1 && strings.one !== undf) {
+                    if (number === 1 && strings.one !== undefined) {
                         return strings.one;
                     }
-                    else if (number < 0 && strings.negative !== undf) {
+                    else if (number < 0 && strings.negative !== undefined) {
                         return strings.negative;
                     }
                     else {

@@ -1,10 +1,10 @@
-var toArray = require("./toArray.js"),
-    isPlainObject = require("./isPlainObject.js"),
-    isBool = require("./isBool.js"),
-    undf = require("../var/undf.js");
+const toArray = require( "./toArray");
+const isPlainObject = require( "./isPlainObject");
+const isBool = require( "./isBool");
+const undf = require( "../var/undf");
 
 /**
- * Copy properties from one object to another
+ * Copy properties = require( one object to another
  * @function extend
  * @param {Object} dst
  * @param {Object} src

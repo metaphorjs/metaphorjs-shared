@@ -1,4 +1,4 @@
-var MetaphorJs = require("metaphorjs-shared/src/MetaphorJs.js");
+var MetaphorJs = require("../MetaphorJs.js");
 require("../lib/Cache.js");
 
 /**

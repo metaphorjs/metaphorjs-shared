@@ -1,5 +1,5 @@
 
-var MetaphorJs = require("metaphorjs-shared/src/MetaphorJs.js");
+var MetaphorJs = require("../../MetaphorJs.js");
 
 module.exports = MetaphorJs.browser.joinLocation = function(location, opt) {
 

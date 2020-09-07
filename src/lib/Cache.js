@@ -1,8 +1,5 @@
 
-var strUndef = require("../var/strUndef.js"),
-    undf = require("../var/undf.js"),
-    MetaphorJs = require("../MetaphorJs.js");
-
+const MetaphorJs = require( "../MetaphorJs");
 
 module.exports = MetaphorJs.lib.Cache = (function(){
 
@@ -63,7 +60,8 @@ module.exports = MetaphorJs.lib.Cache = (function(){
                 }
 
                 storage[name] = {
-                    rewritable: typeof rewritable != strUndef ? rewritable : cacheRewritable,
+                    rewritable: typeof rewritable != "undefined" ? 
+                                    rewritable : cacheRewritable,
                     value: value
                 };
 
@@ -91,17 +89,17 @@ module.exports = MetaphorJs.lib.Cache = (function(){
 
                             res = finders[i].fn.call(finders[i].context, name, self);
 
-                            if (res !== undf) {
+                            if (res !== undefined) {
                                 return self.add(name, res, true);
                             }
                         }
                     }
 
-                    if (defaultValue !== undf) {
+                    if (defaultValue !== undefined) {
                         return this.add(name, defaultValue);
                     }
 
-                    return undf; 
+                    return undefined; 
                 }
 
                 return storage[name].value;
@@ -118,7 +116,7 @@ module.exports = MetaphorJs.lib.Cache = (function(){
                 if (rec && rec.rewritable === true) {
                     delete storage[name];
                 }
-                return rec ? rec.value : undf;
+                return rec ? rec.value : undefined;
             },
 
             /**

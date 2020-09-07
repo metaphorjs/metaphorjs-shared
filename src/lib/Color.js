@@ -1,11 +1,9 @@
 
-var MetaphorJs = require("metaphorjs-shared/src/MetaphorJs.js"),
-    extend = require("metaphorjs-shared/src/func/extend.js"),
-    undf = require("metaphorjs-shared/src/var/undf.js"),
-    isArray = require("metaphorjs-shared/src/func/isArray.js");
+const MetaphorJs = require("../MetaphorJs");
+const extend = require("../func/extend");
+const isArray = require("../func/isArray");
 
-
-module.exports = MetaphorJs.lib.Color = (function () {
+export default MetaphorJs.lib.Color = (function () {
 
 
     var processSet = function (args, prev) {
@@ -22,10 +20,10 @@ module.exports = MetaphorJs.lib.Color = (function () {
                 a4 = args[3];
 
             val = prev.slice();
-            a1 !== undf && a1 !== null && (val[0] = a1);
-            a2 !== undf && a2 !== null && (val[1] = a2);
-            a3 !== undf && a3 !== null && (val[2] = a3);
-            a4 !== undf && a4 !== null && (val[3] = a4);
+            a1 !== undefined && a1 !== null && (val[0] = a1);
+            a2 !== undefined && a2 !== null && (val[1] = a2);
+            a3 !== undefined && a3 !== null && (val[2] = a3);
+            a4 !== undefined && a4 !== null && (val[3] = a4);
         }
         else {
             val = args[0];

@@ -1,7 +1,7 @@
 
 require("../../var/regexp/location.js");
 
-var MetaphorJs = require("metaphorjs-shared/src/MetaphorJs.js");
+var MetaphorJs = require("../../MetaphorJs.js");
 
 module.exports = MetaphorJs.browser.parseLocation = function(url) {
 

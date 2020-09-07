@@ -1,9 +1,8 @@
 
+const toString = require("../toString");
+const undf = require("../../var/undf");
 
-var toString = require("../toString.js"),
-    undf = require("../../var/undf.js");
-
-module.exports = function(){
+module.exports = (function() {
 
     var types = {
         '[object String]': 0,
@@ -60,4 +59,4 @@ module.exports = function(){
         return num;
     };
 
-}();
+})();
