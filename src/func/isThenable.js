@@ -1,5 +1,5 @@
 
-var isFunction = require("./isFunction.js");
+const isFunction = require("./isFunction.js");
 
 /**
  * Checks if given value is a thenable (a Promise)

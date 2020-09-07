@@ -1,5 +1,5 @@
 require("../lib/Provider.js");
-var MetaphorJs = require("../MetaphorJs.js");
+const MetaphorJs = require("../MetaphorJs.js");
 
 module.exports = MetaphorJs.mixin.Provider = {
 

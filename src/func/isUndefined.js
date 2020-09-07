@@ -1,5 +1,4 @@
 
-var strUndef = require("../var/strUndef.js");
 
 /**
  * Check if given variable is undefined
@@ -8,5 +7,5 @@ var strUndef = require("../var/strUndef.js");
  * @returns {boolean}
  */
 module.exports = function isUndefined(any) {
-    return typeof any === strUndef;
+    return typeof any === "undefined";
 };

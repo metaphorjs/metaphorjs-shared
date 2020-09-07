@@ -1,6 +1,6 @@
 
 module.exports = (function(){
-    var toString = Function.prototype.toString;
+    const toString = Function.prototype.toString;
 
     function fnBody(fn) {
         return toString.call(fn).replace(/^[^{]*{\s*/,'').replace(/\s*}[^}]*$/,'');

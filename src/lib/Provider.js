@@ -1,26 +1,25 @@
+require("metaphorjs-promise/src/lib/Promise.js");
 
-
-var extend = require("../func/extend.js"),
+const extend = require("../func/extend.js"),
     isThenable = require("../func/isThenable.js"),
     isFunction = require("../func/isFunction.js"),
     isString = require("../func/isString.js"),
-    undf = require("../var/undf.js"),
     isBool = require("../func/isBool.js"),
     instantiate = require("../func/instantiate.js"),
     MetaphorJs = require("../MetaphorJs.js");
     
-require("metaphorjs-promise/src/lib/Promise.js");
 
 module.exports = MetaphorJs.lib.Provider = (function(){
 
-var VALUE       = 1,
+const VALUE       = 1,
     CONSTANT    = 2,
     FACTORY     = 3,
     SERVICE     = 4,
-    PROVIDER    = 5,
-    globalProvider;
+    PROVIDER    = 5;
+    
+let globalProvider;
 
-var Provider = function() {
+const Provider = function() {
     this.store  = {};
 };
 
@@ -143,7 +142,7 @@ extend(Provider.prototype, {
         currentValues = currentValues || {};
         callArgs = callArgs || [];
 
-        if (currentValues[name] !== undf) {
+        if (currentValues[name] !== undefined) {
             return currentValues[name];
         }
 

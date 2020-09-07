@@ -1,5 +1,5 @@
 
-var _varType = require("./_/_varType.js");
+const _varType = require("./_/_varType.js");
 
 /**
  * Check if given value is regular expression

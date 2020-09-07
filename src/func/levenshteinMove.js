@@ -1,6 +1,4 @@
 
-var undf = require("../var/undf.js");
-
 
 /**
  * @function levenshteinMove {
@@ -43,7 +41,7 @@ module.exports = function levenshteinMove(a1, a2, prs, getKey) {
 
         k = getKey(a2[a2i], a2i);
 
-        if (k !== undf && used[k] !== true && (index = map1[k]) !== undf) {
+        if (k !== undefined && used[k] !== true && (index = map1[k]) !== undefined) {
             newPrs.push(index);
             used[k] = true;
         }

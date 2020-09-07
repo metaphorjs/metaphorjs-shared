@@ -3,7 +3,7 @@ const MetaphorJs = require( "../MetaphorJs");
 
 module.exports = MetaphorJs.lib.Cache = (function(){
 
-    var globalCache;
+    let globalCache;
 
     /**
      * @class MetaphorJs.lib.Cache

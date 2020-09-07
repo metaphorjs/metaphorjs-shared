@@ -1,5 +1,6 @@
-var MetaphorJs = require("../MetaphorJs.js");
 require("../lib/Cache.js");
+
+const MetaphorJs = require("../MetaphorJs.js");
 
 /**
  * Get cached regular expression

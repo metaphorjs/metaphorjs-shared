@@ -1,7 +1,6 @@
 
-var isBool = require("./isBool.js"),
+const isBool = require("./isBool.js"),
     isFunction = require("./isFunction.js"),
-    undf = require("../var/undf.js"),
     isPrimitive = require("./isPrimitive.js"),
     isPlainObject = require("./isPlainObject.js");
 
@@ -41,10 +40,10 @@ module.exports = function(){
             if (isFunction(to)) {
                 return to(value, opt);
             }
-            else if (to === "" || to === undf) {
+            else if (to === "" || to === undefined) {
                 return true;
             }
-            else if (value === undf) {
+            else if (value === undefined) {
                 return false;
             }
             else if (isBool(value)) {
@@ -56,7 +55,7 @@ module.exports = function(){
             else if (opt === "strict") {
                 return ""+value === ""+to;
             }
-            else if (opt === true || opt === null || opt === undf) {
+            else if (opt === true || opt === null || opt === undefined) {
                 return (""+value).toLowerCase().indexOf((""+to).toLowerCase()) != -1;
             }
             else if (opt === false) {
@@ -72,7 +71,7 @@ module.exports = function(){
             }
 
             if (isPrimitive(value)) {
-                if (by.$ === undf) {
+                if (by.$ === undefined) {
                     return true;
                 }
                 else {

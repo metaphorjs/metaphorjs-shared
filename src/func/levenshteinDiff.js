@@ -1,5 +1,5 @@
 
-var equals = require("./equals.js");
+const equals = require("./equals.js");
 
 /**
  * @function levenshteinDiff {

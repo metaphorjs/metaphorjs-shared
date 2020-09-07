@@ -1,5 +1,4 @@
 
-var undf = require("../../var/undf.js");
 
 module.exports = (function() {
 
@@ -11,10 +10,10 @@ module.exports = (function() {
             var fn = new Function("return this"),
                 top = fn();
             
-            if (typeof window !== undf && top === window) {
+            if (typeof window !== undefined && top === window) {
                 env.isWindow = true;
             }
-            else if (typeof global !== undf && top === global) {
+            else if (typeof global !== undefined && top === global) {
                 env.isNode = true;
             }
         }

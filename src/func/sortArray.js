@@ -1,5 +1,5 @@
 
-var isFunction = require("./isFunction.js"),
+const isFunction = require("./isFunction.js"),
     isPlainObject = require("./isPlainObject.js");
 
 /**

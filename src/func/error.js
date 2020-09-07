@@ -1,5 +1,4 @@
 
-var strUndef = require("../var/strUndef.js");
 
 /**
  * Log thrown error to console (in debug mode) and 
@@ -20,7 +19,7 @@ module.exports = (function(){
         }
 
         /*DEBUG-START*/
-        if (typeof console != strUndef && console.error) {
+        if (typeof console != "undefined" && console.error) {
             console.error(e);
         }
         /*DEBUG-END*/

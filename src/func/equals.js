@@ -1,10 +1,9 @@
 
-var isArray = require("./isArray.js"),
+const isArray = require("./isArray.js"),
     isDate = require("./isDate.js"),
     isRegExp = require("./isRegExp.js"),
     isWindow = require("./isWindow.js"),
-    isFunction = require("./isFunction.js"),
-    undf = require("../var/undf.js");
+    isFunction = require("./isFunction.js");
 
 // from Angular
 
@@ -54,7 +53,7 @@ module.exports = function equals(o1, o2) {
                 for(key in o2) {
                     if (!keySet.hasOwnProperty(key) &&
                         key.charAt(0) !== '$' &&
-                        o2[key] !== undf &&
+                        o2[key] !== undefined &&
                         !isFunction(o2[key])) return false;
                 }
                 return true;

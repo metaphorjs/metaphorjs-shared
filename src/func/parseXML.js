@@ -1,6 +1,5 @@
 
-var isString = require("./isString.js"),
-    undf = require("../var/undf.js"),
+const isString = require("./isString.js"),
     error = require("./error.js");
 
 /**
@@ -25,7 +24,7 @@ module.exports = function parseXML(data, type) {
     } 
     catch (thrownError) {
         error(thrownError);
-        xml = undf;
+        xml = undefined;
     }
 
     if (!xml || xml.getElementsByTagName("parsererror").length) {

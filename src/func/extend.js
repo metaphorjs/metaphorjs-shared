@@ -1,7 +1,6 @@
 const toArray = require( "./toArray");
 const isPlainObject = require( "./isPlainObject");
 const isBool = require( "./isBool");
-const undf = require( "../var/undf");
 
 /**
  * Copy properties = require( one object to another
@@ -48,14 +47,14 @@ module.exports = function extend() {
 
         for (k in src) {
 
-            if (src.hasOwnProperty(k) && (value = src[k]) !== undf) {
+            if (src.hasOwnProperty(k) && (value = src[k]) !== undefined) {
 
                 if (deep) {
                     if (dst[k] && isPlainObject(dst[k]) && isPlainObject(value)) {
                         extend(dst[k], value, override, deep);
                     }
                     else {
-                        if (override === true || dst[k] == undf) { // == checks for null and undefined
+                        if (override === true || dst[k] == undefined) { // == checks for null and undefined
                             if (isPlainObject(value)) {
                                 dst[k] = {};
                                 extend(dst[k], value, override, true);
@@ -67,7 +66,7 @@ module.exports = function extend() {
                     }
                 }
                 else {
-                    if (override === true || dst[k] == undf) {
+                    if (override === true || dst[k] == undefined) {
                         dst[k] = value;
                     }
                 }

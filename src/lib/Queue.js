@@ -1,5 +1,5 @@
 
-var async = require("../func/async.js"),
+const async = require("../func/async.js"),
     extend = require("../func/extend.js"),
     bind = require("../func/bind.js"),
     nextUid = require("../func/nextUid.js"),
@@ -13,7 +13,7 @@ var async = require("../func/async.js"),
 module.exports = MetaphorJs.lib.Queue = (function(){
 
 
-var Queue = function(cfg) {
+const Queue = function(cfg) {
 
     var self = this;
 

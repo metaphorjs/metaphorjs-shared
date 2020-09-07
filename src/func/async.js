@@ -7,7 +7,5 @@
  * @param {number} timeout Execute after timeout (number of ms)
  */
 module.exports = function async(fn, context, args, timeout) {
-    return setTimeout(function(){
-        fn.apply(context, args || []);
-    }, timeout || 0);
+    return setTimeout(() => fn.apply(context, args || []), timeout || 0);
 };

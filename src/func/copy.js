@@ -1,17 +1,16 @@
 
-var isArray = require("./isArray.js"),
+const isArray = require("./isArray.js"),
     isRegExp = require("./isRegExp.js"),
     isPlainObject = require("./isPlainObject.js"),
     isDate = require("./isDate.js"),
-    isFunction = require("./isFunction.js"),
-    strUndef = require("../var/strUndef.js");
+    isFunction = require("./isFunction.js");
 
 module.exports = function copy(source, dest){
 
-    if (typeof window != strUndef && source === window) {
+    if (typeof window != "undefined" && source === window) {
         throw new Error("Cannot copy window object");
     }
-    else if (typeof global != strUndef && source === global) {
+    else if (typeof global != "undefined" && source === global) {
         throw new Error("Cannot copy global object");
     }
 

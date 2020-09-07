@@ -1,5 +1,5 @@
 
-var uid = ['0', '0', '0'];
+const uid = ['0', '0', '0'];
 
 // from AngularJs
 /**

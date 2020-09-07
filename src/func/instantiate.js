@@ -1,5 +1,5 @@
 
-var isObject = require("./isObject.js");
+const isObject = require("./isObject.js");
 
 /**
  * Instantite class when you have a list of arguments

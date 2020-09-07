@@ -1,5 +1,5 @@
 
 
-var MetaphorJs = require("../../MetaphorJs.js");
+const MetaphorJs = require("../../MetaphorJs.js");
 
 module.exports = MetaphorJs.regexp.location = /^(((([^:\/#\?]+:)?(?:(\/\/)((?:(([^:@\/#\?]+)(?:\:([^:@\/#\?]+))?)@)?(([^:\/#\?\]\[]+|\[[^\/\]@#?]+\])(?:\:([0-9]+))?))?)?)?((\/?(?:[^\/\?#]+\/+)*)([^\?#]*)))?(\?[^#]+)?)(#.*)?/;

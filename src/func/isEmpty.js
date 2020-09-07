@@ -1,5 +1,5 @@
 
-var isArray = require("../func/isArray.js");
+const isArray = require("../func/isArray.js");
 
 /**
  * Check if value is empty:

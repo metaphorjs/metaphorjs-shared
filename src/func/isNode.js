@@ -1,5 +1,5 @@
 
-var _getEnvType = require("./_/_getEnvType.js");
+const _getEnvType = require("./_/_getEnvType.js");
 
 
 /**

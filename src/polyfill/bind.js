@@ -1,5 +1,5 @@
 
-var toArray = require("../func/toArray.js");
+const toArray = require("../func/toArray.js");
 
 if (!Function.prototype.bind) {
     Function.prototype.bind = function(oThis) {

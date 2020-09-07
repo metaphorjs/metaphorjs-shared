@@ -1,10 +1,9 @@
 
 const toString = require("../toString");
-const undf = require("../../var/undf");
 
 module.exports = (function() {
 
-    var types = {
+    const types = {
         '[object String]': 0,
         '[object Number]': 1,
         '[object Boolean]': 2,
@@ -41,14 +40,14 @@ module.exports = (function() {
             if (val === null) {
                 return 6;
             }
-            if (val === undf) {
+            if (val === undefined) {
                 return 7;
             }
         }
 
-        var num = types[toString.call(val)];
+        let num = types[toString.call(val)];
 
-        if (num === undf) {
+        if (num === undefined) {
             return -1;
         }
 
