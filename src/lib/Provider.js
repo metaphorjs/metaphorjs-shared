@@ -184,7 +184,7 @@ extend(Provider.prototype, {
                 item.value = res;
 
                 if (type === FACTORY && isThenable(res)) {
-                    res.done(function(value){
+                    res[res.done ? "done" : "then"](function(value){
                         item.value = value;
                     });
                 }
