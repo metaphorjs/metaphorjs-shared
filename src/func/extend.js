@@ -36,6 +36,11 @@ module.exports = function extend() {
         override    = args.pop();
     }
 
+    if (override && !deep && typeof Object !== "undefined" && !!Object.assign) {
+        Object.assign.apply(Object, [dst].concat(args));
+        return dst;
+    }
+
     while (args.length) {
         
         // src can be empty
